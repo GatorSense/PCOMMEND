@@ -13,13 +13,13 @@ The inputData is a NxD matrix of N input data points each of D spectral bands (d
 
 The parameters input is a struct with the following fields:
 
-parameters.alpha                 % Regularization Parameter. Range of alpha should be between 0 and 1. 
-parameters.changeThresh          % Stopping criteria for the objective function. 
-parameters.M                     % Number of Endmembers per endmember set. 
-parameters.iterationCap          % Maximum number of iterations.     
-parameters.C                     % Number of clusters or number of endmember sets. 
-parameters.m                     % Fuzzifier for membership. 
-parameters.EPS=.0001;            % Small positive constant. 
+parameters.alpha                % Regularization Parameter. Range of alpha should be between 0 and 1.   
+parameters.changeThresh          % Stopping criteria for the objective function.   
+parameters.M                     % Number of Endmembers per endmember set.   
+parameters.iterationCap          % Maximum number of iterations.       
+parameters.C                     % Number of clusters or number of endmember sets.   
+parameters.m                     % Fuzzifier for membership.   
+parameters.EPS=.0001;            % Small positive constant.   
 
 The parameters structure can be generated using the PCOMMEND_Parameters.m function.  
 
