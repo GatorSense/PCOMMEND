@@ -45,10 +45,10 @@ NOTE: You *will* need to vary the input parameters for real hyperspectral data s
 
 If you have any questions, please contact:
 
-Alina Zare
-Electrical and Computer Engineering
-University of Missouri
-327 Engineering Building West
-Columbia, MO 65211
-zarea@missouri.edu
+Alina Zare  
+Electrical and Computer Engineering  
+University of Missouri  
+327 Engineering Building West  
+Columbia, MO 65211  
+zarea@missouri.edu  
 
