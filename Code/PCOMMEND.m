@@ -44,7 +44,8 @@ function [E,P,U]=PCOMMEND(X,parameters)
 %%
 
 % Initialize parameters
-[E,U] = PCOMMEND_Initialize(X,parameters.C,parameters.M);
+% [E,U] = PCOMMEND_Initialize(X,parameters.C,parameters.M);
+load deterministic_data_for_sim_data_python_debug.mat X E U
 [N,D] = size(X); 
 Cond_old = inf;
 
