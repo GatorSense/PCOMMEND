@@ -44,7 +44,7 @@ if(ScatterFlag)
         [numRow, numCol, D] = size(Image);
         IList = reshape(Image, numRow*numCol, D);
         m = mean(IList);
-        [t, PCAresults] = princomp(IList);
+        [t, PCAresults] = pca(IList);
         IList = PCAresults(:, 1:3);
         for i = 1:length(E)
             EE = (E{i} - repmat(m, [size(E{i},1), 1]))*t;
