@@ -2,7 +2,7 @@ function [E,P,U]=PCOMMEND(X,parameters)
 %% Main function for PCOMMEND
 % This function computes multi-model endmembers and their respective abundances
 % Input:
-%   - X         : Data (N x D) matrix. N data points of dimensionality D. 
+%   - X         : Data (N x D) matrix. N data points of dimensionality D.
 %   - parameters: The parameters set by PCOMMEND_Parameters function.
 %
 % Output:
@@ -44,17 +44,16 @@ function [E,P,U]=PCOMMEND(X,parameters)
 %%
 
 % Initialize parameters
-% [E,U] = PCOMMEND_Initialize(X,parameters.C,parameters.M);
-load deterministic_data_for_sim_data_python_debug.mat X E U
-[N,D] = size(X); 
+[E,U] = PCOMMEND_Initialize(X,parameters.C,parameters.M);
+[N,D] = size(X);
 Cond_old = inf;
 
 % Initialize Proportions
 for i = 1:parameters.C
       P{i} = ones(N,parameters.M)*(1/parameters.M) ;
 end
-    
-for iter = 1:parameters.iterationCap 
+
+for iter = 1:parameters.iterationCap
     %Update abundance
     P_old = P;
     P     = PCOMMEND_P_update(X,E,parameters.C,parameters.EPS);
@@ -66,22 +65,22 @@ for iter = 1:parameters.iterationCap
     %Update fuzzy membership
     U_old = U;
     U     = PCOMMEND_U_update( X,P,E,U,parameters.m);
-    
+
     %Stopping criteria
     Cond  = norm(U - U_old);
     for i = 1:parameters.C
         Cond = Cond + norm(P{i} - P_old{i}) + norm(E{i} - E_old{i}) ;
     end
-    
-    if(abs(Cond - Cond_old) <parameters.changeThresh)   
+
+    if(abs(Cond - Cond_old) <parameters.changeThresh)
         break;
-    end  
+    end
     Cond_old = Cond;
-    
+
     if(~mod(iter, 100))
         fprintf('iter= %d   Cond= %f \n', iter, Cond);
     end
-  
+
 end
 
 %% end of function
