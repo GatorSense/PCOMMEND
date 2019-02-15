@@ -1,10 +1,12 @@
 function [E,U] = PCOMMEND_Initialize(X,C,M)
 % This function initialize Endmembers and Membership
+%
 % Input:
 %   - X: Data points (NxD)
 %   - C: Number of clusters
 %   - M: Number of Endmembers per cluster
-% output:
+%
+% Output:
 %   - U: the fuzzy membership matrix (CxN), and
 %   - E: Cell of C endmembers matrices. One (Mxd) matrix per cluster.
 %

@@ -1,5 +1,6 @@
-function PCOMMEND_ViewResults_ToyData(E, parameters, Etrue) 
+function PCOMMEND_ViewResults_ToyData(E, parameters, Etrue)
 %% View Results for Toy Data
+%
 % Input-  E, True Endmembers and Paramters
 %
 % This product is Copyright (c) 2013 University of Missouri, University
@@ -32,7 +33,7 @@ function PCOMMEND_ViewResults_ToyData(E, parameters, Etrue)
 % CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 % OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 % SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-%%  
+%%
 %Flags- Plot
 EndmembersPlot = 1;                     % View Endmembers
 EstEndVsTrueEnd = 1;                    % View Estimated Endmembers vs True Endmembers
@@ -44,7 +45,7 @@ if(EndmembersPlot)
         plot(E1','DisplayName', 'Endmembers');
         xlabel('Wavelength'); ylabel('Reflectance');
         title(['Estimated Endmembers in partition ', (num2str(p))]);
-    end  
+    end
 end
 
 if(EstEndVsTrueEnd)

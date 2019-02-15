@@ -1,10 +1,12 @@
 function P=PCOMMEND_P_update(X,E,C,EPS)
 %% This function updates the abundace matrices (one per cluster)
+%
 % Input:
 %   - X:   Pixel points (NxD matrix).
 %   - E:   Cell of C endmembers matrices. One (MxD) matrix per cluster.
 %   - M:   Number of endmembers.
 %   - EPS: Small positive constant.
+%
 % Output:
 %   - P:  Cell of C abundance matrices. One (NxM) matrix per cluster
 %
@@ -61,7 +63,7 @@ if(M > 1)
     Lamda=(1-(Z*E*(X)'))/(Z*ones(M,1));                                     % Equation 8 in PCOMMEND paper
     P=(Y*(E*(X)'+ (Lamda'*ones(M,1)')'))';                                  % Equation 7 in PCOMMEND paper
     Z = P < 0;
-    
+
     % If P<0, re-calculate proportions
     if(sum(sum(Z)) > 0)
         ZZ = unique(Z, 'rows', 'first');                                    % get unique first rows from Z
@@ -72,7 +74,7 @@ if(M > 1)
                 inds = all(Z == rZZi,2);                                    % Find nonzero array in Z and store it in inds
                 [Ptemp] = getProps(E(eLocs,:), X(inds,:), EPS);
                 Ptemp2 = zeros(sum(inds), size(ZZ,2));
-                
+
                 Ptemp2(:, eLocs) = Ptemp;
                 P(inds,:) = Ptemp2;
             end

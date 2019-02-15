@@ -1,9 +1,13 @@
 function [Membership, Centers] = PCOMMEND_fcm(X, NumClusters)
 %% This funciton will initialize Membership matrix using Fuzzy C Means
-% Input - X (NxD) Data matrix
-%       - Number of clusters
-% Output - Membership (CxN)
 %
+% Input:
+% 	- X: (NxD) Data matrix
+%   - Number of clusters
+%
+% Output:
+% 	- U: Membership (CxN)
+%	- Centers (CxD)
 %
 % This product is Copyright (c) 2013 University of Missouri, University
 % of Florida and University of Louisville.
@@ -35,7 +39,7 @@ function [Membership, Centers] = PCOMMEND_fcm(X, NumClusters)
 % CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 % OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 % SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-%% 
+%%
 
 mFuzzifier = 2;
 
@@ -49,22 +53,22 @@ Centers = ones(NumClusters, NumDims);
 continueFlag = 1;
 
 while(continueFlag)
-    prevMembership = Membership; 
-    
+    prevMembership = Membership;
+
     %Update Cluster Centers
     Centers = ((Membership.^mFuzzifier)'*ImageList')./repmat(sum((Membership.^mFuzzifier))', [1, NumDims]);
-    
+
     %Update Membership
     D = (1./(pdist2(ImageList', Centers)).^2).^(1/(mFuzzifier-1));
     S = sum((D)')';
     Membership = D./repmat(S, [1, NumClusters]);
-    
+
     %Check Convergence
     n = max(max(abs(Membership - prevMembership)));
     if(n < stopThresh)
         continueFlag =0;
     end
-    
+
 end
 
 Membership = Membership';

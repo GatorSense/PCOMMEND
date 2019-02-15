@@ -1,10 +1,10 @@
 function E=PCOMMEND_E_Update(U1,m,alpha,P,X,EPS)
-
 %% This function updates the endmembers matrices (one per cluster)
+%
 % Input:
-%   - U:      Fuzzy membership matrix (CxN). 
+%   - U:      Fuzzy membership matrix (CxN).
 %   - m:      Fuzzifier.
-%   - alpha:  Regularization Pprameter to trade off between the RSS and V
+%   - alpha:  Regularization Parameter to trade off between the RSS and V
 %             terms
 %   - P:      Cell of C abundance matrices. One NxM matrix per cluster.
 %   - X:      Pixel points (NxD matrix).

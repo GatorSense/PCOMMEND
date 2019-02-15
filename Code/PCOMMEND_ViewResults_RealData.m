@@ -1,5 +1,6 @@
-function PCOMMEND_ViewResults_RealData(Image, P, E, U,parameters)           
+function PCOMMEND_ViewResults_RealData(Image, P, E, U,parameters)
 %% View Results for Real Data
+%
 % Input-  Image, P, E, U and parameters
 %
 % This product is Copyright (c) 2013 University of Missouri, University
@@ -48,19 +49,19 @@ if(ScatterFlag)
         IList = PCAresults(:, 1:3);
         for i = 1:length(E)
             EE = (E{i} - repmat(m, [size(E{i},1), 1]))*t;
-            figure(100+i); 
+            figure(100+i);
             hold off;
             scatter3(IList(1:subsampleValue:end,1), IList(1:subsampleValue:end,2), IList(1:subsampleValue:end,3), 30, U(i,1:subsampleValue:end),'filled');
             hold on;
             scatter3(EE(:,1), EE(:,2), EE(:,3), 100, 'k', 'filled'); title(['Scatter Plot of Partition ', (num2str(i))]);
-        end    
+        end
 end
 
 if(ProportionMaps)
     for i = 1:length(P)
         figure(200+i);
         for j = 1:size(P{i},2)
-            subplot(ceil(size(P{i},2)/2), 2, j);  
+            subplot(ceil(size(P{i},2)/2), 2, j);
             PP = reshape(P{i}(:,j), [size(Image,1), size(Image,2)]);
             imagesc(PP, [0 1]); title(['Proportion Map of Partition ', (num2str(i)), ' & Endmember ', (num2str(j))]);
         end
@@ -95,7 +96,7 @@ if(EndmembersPlot)
         plot(E1','DisplayName', 'Endmembers');
         xlabel('Wavelength'); ylabel('Reflectance');
         title(['Endmembers in partition ', (num2str(p))]);
-    end  
+    end
 end
 
 end

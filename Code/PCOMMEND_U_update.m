@@ -1,13 +1,14 @@
 function U=PCOMMEND_U_update(X,P,E,U,m)
-
 %% This function updates the fuzzy membership matrix (CxN).
+%
 % Input:
-%   - X: Pixel points (Nxd matrix).
+%   - X: Pixel points (NxD matrix).
 %   - P: Cell of C abundance matrices. One (NxM) matrix per cluster.
-%   - E: Cell of C endmembers matrices. One (Mxd) matrix per cluster.
+%   - E: Cell of C endmembers matrices. One (MxD) matrix per cluster.
 %   - U: the fuzzy membership matrix (CxN).
 %   - m: Fuzzifier.
 %   - EPS: small positive constant.
+%
 % Output:
 %   - U: the fuzzy membership matrix (CxN).
 %

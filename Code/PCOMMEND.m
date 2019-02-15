@@ -1,6 +1,7 @@
 function [E,P,U]=PCOMMEND(X,parameters)
 %% Main function for PCOMMEND
 % This function computes multi-model endmembers and their respective abundances
+%
 % Input:
 %   - X         : Data (N x D) matrix. N data points of dimensionality D.
 %   - parameters: The parameters set by PCOMMEND_Parameters function.
@@ -9,7 +10,6 @@ function [E,P,U]=PCOMMEND(X,parameters)
 %   - E         : Cell of C endmembers matrices. One MxD matrix per cluster.
 %   - P         : Cell of C abundance matrices. One NxM matrix per cluster.
 %   - U         : Fuzzy membership matrix CxN.
-%
 %
 % This product is Copyright (c) 2013 University of Missouri, University
 % of Florida and University of Louisville.
