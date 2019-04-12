@@ -47,8 +47,6 @@ If you have any questions, please contact:
 
 Alina Zare  
 Electrical and Computer Engineering  
-University of Missouri  
-327 Engineering Building West  
-Columbia, MO 65211  
-zarea@missouri.edu  
+University of Florida
+azare [at] ufl.edu
 
