@@ -1,7 +1,7 @@
 PCOMMEND (Piecewise Convex Multiple-Model Endmember Detection and Spectral Unmixing) ReadMe
 
 ******
-When using this code, cite it: Alina Zare, Paul Gader, Anand Seethepalli, & Yutai Zhou. (2019, April 12). GatorSense/PCOMMEND: Initial Release (Version v1.0). Zenodo. http://doi.org/10.5281/zenodo.2638278
+When using this code, cite it: Alina Zare, Paul Gader, & Anand Seethepalli. (2019, April 12). GatorSense/PCOMMEND: Initial Release (Version v1.0). Zenodo. http://doi.org/10.5281/zenodo.2638278
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2638278.svg)](https://doi.org/10.5281/zenodo.2638278)
 ******
 NOTE: If the PCOMMEND Algorithm is used in any publication or presentation, the following reference must be cited:
